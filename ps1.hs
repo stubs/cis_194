@@ -49,5 +49,5 @@ type Move = (Peg, Peg)
 hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
 --Haanoi should return list of moves to be performed to move from first peg to second
 --hanoi 2 from_peg to_peg spare_peg
-hanoi x a b c = if x == 1
-    then (a,b)
+hanoi 0 a b c = []
+hanoi x a b c = hanoi (x-1) a c b ++ [(a,b)] ++ hanoi (x-1) c b a
