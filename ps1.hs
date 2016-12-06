@@ -1,9 +1,7 @@
 --Author: A.D. Gonzalez
---Updated: 12/3/2016
+--Updated: 12/2016
 
 --Exercise 1
---skipDoubler xs = reverse (zipWith ($) (cycle [id, (*2)]) (reverse xs))
-
 toDigits :: Integer -> [Integer]
 --maps a lambda function (sorry if that is strictly python related language
 --that reads (or casts an input string to a different type) in a string and converts
@@ -24,6 +22,7 @@ doubleEveryOther :: [Integer] -> [Integer]
 --uses cycle to loop between two functions and zips them to reversed integer list.  Reverses again.
 doubleEveryOther xs = reverse (zipWith ($) (cycle [id, (*2)]) (reverse xs))
 
+
 --Exercise 3
 sumDigits :: [Integer] -> Integer
 --sumDigits [16,7,12,5] = 1 + 6 + 7 + 1+ 2 + 5 = 22
@@ -40,10 +39,7 @@ validate x
     | x `mod` 10 /= 0 = False
 
 
-
-
-
---Exercise 2
+--Exercise 5
 type Peg = String
 type Move = (Peg, Peg)
 hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
@@ -51,3 +47,7 @@ hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
 --hanoi 2 from_peg to_peg spare_peg
 hanoi 0 a b c = []
 hanoi x a b c = hanoi (x-1) a c b ++ [(a,b)] ++ hanoi (x-1) c b a
+
+
+--Exercise 6 (Optional)
+--TODO
